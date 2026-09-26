@@ -20,6 +20,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.AlignmentLine
 import androidx.compose.ui.res.painterResource
@@ -93,6 +94,7 @@ class MainActivity : ComponentActivity() {
                 .padding(16.dp)
                 .width(270.dp)
                 .clip(shape = RoundedCornerShape((30.dp)))
+                .rotate(60f)
         )
     }
 }
