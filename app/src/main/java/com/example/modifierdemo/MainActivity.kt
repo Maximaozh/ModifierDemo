@@ -5,7 +5,10 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.gestures.ScrollableState
+import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -33,8 +36,7 @@ import com.example.modifierdemo.ui.theme.ModifierDemoTheme
 class MainActivity : ComponentActivity() {
 
     val smallModifier = Modifier
-        .padding(all = 10.dp)
-        .border(width = 2.dp, color = Color.Black)
+        .background(color = Color.White)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,7 +75,8 @@ class MainActivity : ComponentActivity() {
         {
             Text(
                 "Hello compose",
-                myModifier,
+                myModifier
+                    .then(smallModifier),
                 fontSize = 40.sp,
                 fontWeight = FontWeight.Bold
             )
@@ -95,6 +98,7 @@ class MainActivity : ComponentActivity() {
                 .width(270.dp)
                 .clip(shape = RoundedCornerShape((30.dp)))
                 .rotate(60f)
+
         )
     }
 }
